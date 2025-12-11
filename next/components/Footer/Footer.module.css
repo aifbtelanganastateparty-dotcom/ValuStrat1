@@ -30,7 +30,7 @@
   right: 0;
   bottom: 0;
   opacity: 0.09;
-  background-image: url('https://cdn.prod.website-files.com/61ffed246e785f28c1a44633/6201219b6b9f8c67cd16aece_banner_abstract_!.svg');
+  background-image: url('/banner_abstract.svg');
   background-size: cover;
   background-position: center;
   pointer-events: none;
