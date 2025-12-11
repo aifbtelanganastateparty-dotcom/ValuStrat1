@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { NAV_LINKS, COMPANY_INFO, SOCIAL_LINKS } from '@/lib/constants'
+import { COMPANY_INFO, SOCIAL_LINKS } from '@/lib/constants'
 import styles from './Footer.module.css'
 
 const Footer = () => {
