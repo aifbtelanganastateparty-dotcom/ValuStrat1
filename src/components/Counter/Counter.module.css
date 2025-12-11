@@ -1,0 +1,7 @@
+.counter {
+  font-weight: 700;
+  font-family: var(--poppins);
+  color: var(--orange-red);
+  font-size: inherit;
+}
+

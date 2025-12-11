@@ -1,0 +1,61 @@
+.button {
+  position: relative;
+  overflow: hidden;
+  padding: 0.875rem 2rem;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: var(--dm-sans);
+  border: 2px solid transparent;
+  display: inline-block;
+  text-align: center;
+  will-change: transform;
+}
+
+.button.primary {
+  background-color: var(--orange-red);
+  color: white;
+  border-color: var(--orange-red);
+}
+
+.button.primary:hover {
+  background-color: var(--orange-red-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 87, 34, 0.3);
+}
+
+.button.secondary {
+  background-color: transparent;
+  color: var(--orange-red);
+  border-color: var(--orange-red);
+}
+
+.button.secondary:hover {
+  background-color: rgba(255, 87, 34, 0.05);
+  transform: translateY(-2px);
+}
+
+.button.outline {
+  background-color: white;
+  color: var(--black);
+  border-color: var(--grey);
+}
+
+.button.outline:hover {
+  border-color: var(--orange-red);
+  color: var(--orange-red);
+  transform: translateY(-2px);
+}
+
+/* Ripple effect */
+.button .ripple {
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.6);
+  pointer-events: none;
+  transform: scale(0);
+}
+

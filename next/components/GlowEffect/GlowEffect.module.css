@@ -1,0 +1,29 @@
+.glowContainer {
+  position: relative;
+  transition: box-shadow 0.3s ease;
+}
+
+.glowContainer::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(
+    45deg,
+    var(--orange-red),
+    var(--orange-red-dark),
+    var(--orange-red)
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.glowContainer:hover::before {
+  opacity: 1;
+}
+

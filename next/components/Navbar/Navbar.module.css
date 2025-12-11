@@ -1,0 +1,229 @@
+.navbar {
+  position: fixed;
+  inset: 0% 0% auto;
+  width: 100%;
+  background-color: transparent;
+  z-index: 15;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--white);
+  text-decoration: none;
+  font-family: var(--poppins);
+  transition: color 0.3s ease;
+}
+
+.logo:hover {
+  color: var(--orange-red);
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.navLink {
+  color: rgba(255, 255, 255, 0.82);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+  font-family: var(--dm-sans);
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--orange-red);
+  transition: width 0.3s ease;
+}
+
+.navLink:hover {
+  color: var(--white);
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+.navLink.active {
+  color: var(--orange-red);
+}
+
+.navbar.scrolled .logo {
+  color: var(--black);
+}
+
+.navbar.scrolled .navLink {
+  color: var(--black);
+}
+
+.navbar.scrolled .navLink span {
+  color: var(--black);
+}
+
+.navbar.scrolled .navLink:hover {
+  color: var(--black);
+}
+
+.navbar.scrolled .navLink:hover span {
+  color: var(--black);
+}
+
+.navbar.scrolled .hamburger span {
+  background-color: var(--black);
+}
+
+.navLink.active::after {
+  width: 100%;
+}
+
+.contactButton {
+  background-color: var(--orange-red);
+  color: white !important;
+  padding: 0.5rem 1.25rem !important;
+  border-radius: 4px;
+  margin-left: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.contactButton::after {
+  display: none;
+}
+
+.contactButton:hover {
+  background-color: #e64a19;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 87, 34, 0.2);
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10;
+}
+
+.hamburger span {
+  width: 100%;
+  height: 2px;
+  background-color: var(--white);
+  transition: all 0.3s ease;
+  transform-origin: left;
+}
+
+.hamburger.active span:first-child {
+  transform: rotate(45deg) translate(1px, -1px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:last-child {
+  transform: rotate(-45deg) translate(1px, 1px);
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 998;
+}
+
+/* Mobile menu */
+@media (max-width: 768px) {
+  .overlay {
+    display: block;
+  }
+
+  .navLinks {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 6rem 2rem 2rem;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 999;
+  }
+
+  .navLinks .navLink {
+    color: var(--black);
+  }
+
+  .navLinks .navLink:hover {
+    color: var(--black);
+  }
+
+  .navLinks.active {
+    right: 0;
+  }
+
+  .navLink {
+    width: 100%;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .navLink.active {
+    color: var(--orange-red);
+  }
+
+  .contactButton {
+    margin: 1rem 0 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+

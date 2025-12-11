@@ -1,0 +1,44 @@
+.primary,
+.secondary {
+  padding: 0.875rem 2rem;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-family: var(--dm-sans);
+  display: inline-block;
+  border: 2px solid;
+  cursor: pointer;
+  text-align: center;
+}
+
+.primary {
+  background-color: var(--orange-red);
+  color: var(--white);
+  border-color: var(--orange-red);
+}
+
+.primary:hover:not(:disabled) {
+  background-color: var(--orange-red-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 87, 34, 0.2);
+}
+
+.secondary {
+  background-color: transparent;
+  color: var(--orange-red);
+  border-color: var(--orange-red);
+}
+
+.secondary:hover:not(:disabled) {
+  background-color: rgba(255, 87, 34, 0.05);
+  transform: translateY(-2px);
+}
+
+.primary:disabled,
+.secondary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+

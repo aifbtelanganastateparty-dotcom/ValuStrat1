@@ -1,0 +1,19 @@
+.scrollProgress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: rgba(0, 0, 0, 0.05);
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.progressBar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--orange-red) 0%, var(--orange-red-light) 100%);
+  box-shadow: 0 0 10px rgba(255, 87, 34, 0.5);
+  transition: width 0.1s ease-out;
+}
+

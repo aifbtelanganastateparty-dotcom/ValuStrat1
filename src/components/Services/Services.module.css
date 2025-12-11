@@ -1,0 +1,237 @@
+.services {
+  padding: 6rem 0;
+  background-color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  color: var(--black);
+  margin-bottom: 1rem;
+  font-weight: 700;
+  font-family: var(--poppins);
+  position: relative;
+  display: inline-block;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: var(--orange-red);
+  border-radius: 2px;
+}
+
+.sectionSubtitle {
+  font-size: 1.1rem;
+  color: var(--dim-grey);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-family: var(--dm-sans);
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.serviceCard {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  will-change: transform, opacity;
+  transform: translateZ(0); /* Force GPU acceleration */
+}
+
+.serviceCard {
+  position: relative;
+  overflow: hidden;
+}
+
+.serviceCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 87, 34, 0.1),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.serviceCard:hover::before {
+  left: 100%;
+}
+
+.serviceCard:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(255, 87, 34, 0.15);
+  border-color: rgba(255, 87, 34, 0.3);
+}
+
+.iconContainer {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: rgba(255, 87, 34, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.serviceCard:hover .iconContainer {
+  background-color: var(--orange-red);
+}
+
+.icon {
+  font-size: 2rem;
+  transition: all 0.3s ease;
+}
+
+.serviceCard:hover .icon {
+  color: white;
+  transform: scale(1.1);
+}
+
+.serviceTitle {
+  font-size: 1.5rem;
+  color: var(--black);
+  margin-bottom: 1rem;
+  font-weight: 600;
+  font-family: var(--poppins);
+}
+
+.serviceDescription {
+  color: var(--dim-grey);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  flex-grow: 1;
+  font-family: var(--dm-sans);
+}
+
+.learnMore {
+  color: var(--orange-red);
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  font-family: var(--dm-sans);
+}
+
+.learnMore::after {
+  content: '→';
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.learnMore:hover {
+  color: #e64a19;
+}
+
+.learnMore:hover::after {
+  transform: translateX(4px);
+}
+
+.ctaContainer {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.viewAllButton {
+  display: inline-block;
+  padding: 0.875rem 2.5rem;
+  background-color: transparent;
+  color: var(--orange-red);
+  border: 2px solid var(--orange-red);
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-family: var(--dm-sans);
+}
+
+.viewAllButton:hover {
+  background-color: var(--orange-red);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 87, 34, 0.2);
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .services {
+    padding: 4rem 0;
+  }
+  
+  .sectionTitle {
+    font-size: 2.25rem;
+  }
+  
+  .servicesGrid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .sectionTitle {
+    font-size: 2rem;
+  }
+  
+  .sectionSubtitle {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+  
+  .serviceCard {
+    padding: 2rem 1.5rem;
+  }
+  
+  .serviceTitle {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sectionTitle {
+    font-size: 1.75rem;
+  }
+  
+  .servicesGrid {
+    grid-template-columns: 1fr;
+  }
+}
